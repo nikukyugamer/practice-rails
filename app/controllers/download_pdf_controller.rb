@@ -1,0 +1,2 @@
+class DownloadPdfController < ApplicationController
+end
