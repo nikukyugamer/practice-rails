@@ -1,1 +1,19 @@
-<%= @hello %>
+<%= form_with model: User.new, url: users_path, local: true do |form| %>
+  first_name: <%= form.text_field :first_name %><br>
+  last_name: <%= form.text_field :last_name %><br>
+  age: <%= form.text_field :age %><br>
+  height: <%= form.text_field :height %><br>
+  weight: <%= form.text_field :weight %><br>
+  foobar: <%= form.file_field :foobar %><br>
+
+  <%= form.submit 'form_submit!!' %>
+<% end %>
+
+<blockquote>
+  <pre>
+    アップロードしたあとの、ファイルのオブジェクトを取得する方法
+    attacher = HogeFuga::Attacher.from_model(User.find(5), :foobar)
+    <% attacher = HogeFuga::Attacher.from_model(User.find(5), :foobar) %>
+    <%= attacher.url %>
+  </pre>
+</blockquote>
