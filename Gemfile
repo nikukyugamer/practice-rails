@@ -27,6 +27,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'bundler-diff'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'rubocop-rails'
   gem 'spring'
