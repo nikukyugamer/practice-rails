@@ -21,6 +21,7 @@ vendor/
 
 /public/packs
 /public/packs-test
+/public/uploads
 /node_modules
 /yarn-error.log
 yarn-debug.log*
