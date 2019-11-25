@@ -1,0 +1,2 @@
+class PunditerController < ApplicationController
+end
