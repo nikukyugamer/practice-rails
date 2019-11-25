@@ -1,0 +1,2 @@
+class HogeFuga < Shrine
+end
