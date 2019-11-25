@@ -1,0 +1,2 @@
+module PunditerHelper
+end
