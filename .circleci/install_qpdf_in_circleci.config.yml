@@ -16,6 +16,30 @@ jobs:
             - v1-dependencies-{{ checksum "Gemfile.lock" }}
             - v1-dependencies-
       - run:
+          name: Install qpdf and jq
+          command: |
+            sudo apt-get install -y qpdf jq
+      - run:
+          # Without metadata (http://www.soumu.go.jp/main_content/000651275.pdf)
+          name: Check PDF metadata (Author) existence (000651275.pdf)
+          command: |
+            METADATA_AUTHOR_VALUE=`qpdf --json 000651275.pdf | jq 'recurse | select(."/Author"?) | ."/Author"'`
+            if [ -z "$METADATA_AUTHOR_VALUE" ] || [ "$METADATA_AUTHOR_VALUE" = \"\" ]; then
+              exit 0
+            else
+              exit 1
+            fi
+      - run:
+          # With metadata (http://www.koho.metro.tokyo.jp/2019/10/documents/201910_re.pdf)
+          name: Check PDF metadata (Author) existence (201910_re.pdf)
+          command: |
+            METADATA_AUTHOR_VALUE=`qpdf --json 201910_re.pdf | jq 'recurse | select(."/Author"?) | ."/Author"'`
+            if [ -z "$METADATA_AUTHOR_VALUE" ] || [ "$METADATA_AUTHOR_VALUE" = \"\" ]; then
+              exit 1 # Author というキーが存在しない場合には落ちる（逆テスト）
+            else
+              exit 0 # Author というキーが存在している場合（値が存在している場合）は通る（逆テスト）
+            fi
+      - run:
           name: Install Bundler 2
           command: |
             gem install bundler
