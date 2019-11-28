@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   resources :users, only: %i[index create]
   resources :home, only: %i(index create)
   resources :download_pdf, only: %i(index)
+
+  resources :punditer
 end

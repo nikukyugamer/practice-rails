@@ -8,9 +8,10 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'image_processing', '~> 1.2'
 gem 'jbuilder', '~> 2.7'
 gem 'puma', '~> 3.11'
+gem 'pundit'
 gem 'rails', '~> 6.0.0.rc2'
 gem 'sass-rails', '~> 5'
-gem "shrine", "~> 3.0"
+gem 'shrine', '~> 3.0'
 gem 'sorcery'
 gem 'sqlite3', '~> 1.4'
 gem 'turbolinks', '~> 5'

@@ -1,0 +1,2 @@
+class Punditer < ApplicationRecord
+end
