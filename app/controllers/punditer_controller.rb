@@ -1,5 +1,5 @@
 class PunditerController < ApplicationController
   def index
-    authorize Punditer
+    @sony_cat = PunditerPolicy::Scope.new(current_user, Punditer).resolve
   end
 end
