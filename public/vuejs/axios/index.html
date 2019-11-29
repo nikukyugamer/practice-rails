@@ -2,10 +2,23 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <title>Vue.js で axios を使う</title>
   </head>
   <body>
-    <div id="app"></div>
+    <section class="section">
+      <div class="container">
+        <h1>Vue.js で axios を使って外部の JSON から値を持ってきて表示する</h1>
+
+        <br><!-- デザインの敗北 -->
+
+        <div id="app">
+          {{ message }}
+        </div>
+      </div>
+    </section>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
