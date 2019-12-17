@@ -1,0 +1,15 @@
+{
+  "name": "try_webpack",
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack --mode development --watch --hide-modules",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "jquery": "^3.4.1"
+  },
+  "devDependencies": {
+    "webpack": "^4.41.3",
+    "webpack-cli": "^3.3.10"
+  }
+}

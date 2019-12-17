@@ -27,6 +27,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'rspec-rails'
+  gem 'rspec_junit_formatter'
   gem 'simplecov'
   gem 'spring-commands-rspec'
 end
