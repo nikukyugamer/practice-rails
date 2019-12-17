@@ -3,7 +3,7 @@ const path = require('path');
 
 module.exports = {
   mode: 'development',
-  entry: './src/js/app/js',
+  entry: './src/js/app.js',
   output: {
     filename: 'bundle.js',
     // 絶対パスを指定しないとエラーが出るので注意する
