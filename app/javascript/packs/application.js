@@ -17,4 +17,4 @@ require("channels")
 // const imagePath = (name) => images(name, true)
 
 console.log('Hello, Webpacker World!');
-a
+console.log('Hello, Webpacker World!!');
