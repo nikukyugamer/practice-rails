@@ -105,7 +105,31 @@ eval("var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!\n * jQ
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);\n!(function webpackMissingModule() { var e = new Error(\"Cannot find module './modules/add'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }());\n!(function webpackMissingModule() { var e = new Error(\"Cannot find module './modules/tax'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }());\n\n\n\n\nconst item1Price  = 400;\nconst item2Price  = 600;\nconst totalPrice  = !(function webpackMissingModule() { var e = new Error(\"Cannot find module './modules/add'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }())(item1Price, item2Price);\nconst salesTax    = 1.08;\nconst priceIncludeTax = !(function webpackMissingModule() { var e = new Error(\"Cannot find module './modules/tax'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }())(totalPrice, salesTax);\n\njquery__WEBPACK_IMPORTED_MODULE_0___default()('body').text(priceIncludeTax);\n\n// export と import の様々な書き方\n\n// export\n// export const add = (n1, n2) => n1 + n2\n// export const sub = (n1, n2) => n1 - n2\n\n// import\n// {} を用いることで、そこに指定されている引数のメソッドだけを import できる\n// import { add } from './math.js';\n// import { add, sub as SUB } from './math.js';\n// import * as math from './math.js';\n\n\n//# sourceURL=webpack:///./src/js/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _modules_add__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/add */ \"./src/js/modules/add.js\");\n/* harmony import */ var _modules_tax__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/tax */ \"./src/js/modules/tax.js\");\n\n\n\n\nconst item1Price  = 400;\nconst item2Price  = 600;\nconst totalPrice  = Object(_modules_add__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(item1Price, item2Price);\nconst salesTax    = 1.08;\nconst priceIncludeTax = Object(_modules_tax__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(totalPrice, salesTax);\n\njquery__WEBPACK_IMPORTED_MODULE_0___default()('body').text(priceIncludeTax);\n\n// export と import の様々な書き方\n\n// export\n// export const add = (n1, n2) => n1 + n2\n// export const sub = (n1, n2) => n1 - n2\n\n// import\n// {} を用いることで、そこに指定されている引数のメソッドだけを import できる\n// import { add } from './math.js';\n// import { add, sub as SUB } from './math.js';\n// import * as math from './math.js';\n\n\n//# sourceURL=webpack:///./src/js/app.js?");
+
+/***/ }),
+
+/***/ "./src/js/modules/add.js":
+/*!*******************************!*\
+  !*** ./src/js/modules/add.js ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return add; });\nfunction add(number1, number2) {\n  return number1 + number2;\n}\n\n\n//# sourceURL=webpack:///./src/js/modules/add.js?");
+
+/***/ }),
+
+/***/ "./src/js/modules/tax.js":
+/*!*******************************!*\
+  !*** ./src/js/modules/tax.js ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return tax; });\nfunction tax(price, salesTax) {\n  return Math.round(price * salesTax);\n}\n\n\n//# sourceURL=webpack:///./src/js/modules/tax.js?");
 
 /***/ })
 
