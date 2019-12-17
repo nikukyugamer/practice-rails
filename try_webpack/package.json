@@ -4,6 +4,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "jquery": "^3.4.1",
     "webpack": "^4.41.3",
     "webpack-cli": "^3.3.10"
   }
