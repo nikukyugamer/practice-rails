@@ -15,6 +15,3 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
-
-console.log('Hello, Webpacker World!');
-console.log('Hello, Webpacker World!!');
