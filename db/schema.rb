@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2019_12_29_082056) do
     t.integer "author_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["article_id", "author_id"], name: "index_article_authors_on_article_id_and_author_id", unique: true
     t.index ["article_id"], name: "index_article_authors_on_article_id"
     t.index ["author_id"], name: "index_article_authors_on_author_id"
   end

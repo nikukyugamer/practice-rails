@@ -6,5 +6,7 @@ class CreateArticleAuthors < ActiveRecord::Migration[6.0]
 
       t.timestamps
     end
+
+    add_index :article_authors, %i[article_id author_id], unique: true
   end
 end
