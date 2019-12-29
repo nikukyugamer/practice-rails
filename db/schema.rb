@@ -10,7 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_26_024855) do
+ActiveRecord::Schema.define(version: 2019_12_29_082056) do
+
+  create_table "article_authors", force: :cascade do |t|
+    t.integer "article_id"
+    t.integer "author_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["article_id", "author_id"], name: "index_article_authors_on_article_id_and_author_id", unique: true
+    t.index ["article_id"], name: "index_article_authors_on_article_id"
+    t.index ["author_id"], name: "index_article_authors_on_author_id"
+  end
+
+  create_table "articles", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "sub_title"
+    t.string "genre", default: "UNKNOWN", null: false
+    t.datetime "published_at", default: "1970-01-01 03:00:00", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "authors", force: :cascade do |t|
+    t.string "first_name", default: "UNKNOWN", null: false
+    t.string "last_name", default: "UNKNOWN", null: false
+    t.string "job", default: "UNKNOWN", null: false
+    t.string "country", default: "UNKNOWN", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "members", force: :cascade do |t|
     t.string "firstname"
@@ -42,4 +70,6 @@ ActiveRecord::Schema.define(version: 2019_11_26_024855) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "article_authors", "articles"
+  add_foreign_key "article_authors", "authors"
 end
