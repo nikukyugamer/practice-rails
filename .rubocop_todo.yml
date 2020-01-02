@@ -39,7 +39,7 @@ Style/FrozenStringLiteralComment:
 Style/RescueModifier:
   Enabled: false
 
-Metrics/LineLength:
+Layout/LineLength:
   Enabled: false
 
 Style/BracesAroundHashParameters:
