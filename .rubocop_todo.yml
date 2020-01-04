@@ -6,7 +6,7 @@
 # Note that changes in the inspected code, or installation of new
 # versions of RuboCop, may require this file to be generated again.
 
-Layout/AlignParameters:
+Layout/ParameterAlignment:
   Enabled: false
 
 Style/ClassAndModuleChildren:
@@ -72,7 +72,7 @@ Layout/SpaceInsideStringInterpolation:
 Layout/CommentIndentation:
   Enabled: false
 
-Layout/TrailingBlankLines:
+Layout/TrailingEmptyLines:
   Enabled: false
 
 Layout/SpaceAroundEqualsInParameterDefault:
@@ -105,7 +105,7 @@ Layout/EndAlignment:
 Lint/AssignmentInCondition:
   Enabled: false
 
-Layout/AlignHash:
+Layout/HashAlignment:
   Enabled: false
 
 Layout/TrailingWhitespace:
@@ -129,7 +129,7 @@ Rails/Date:
 Style/NumericPredicate:
   Enabled: false
 
-Naming/UncommunicativeMethodParamName:
+Naming/MethodParameterName:
   Enabled: false
 
 Style/MultilineBlockChain:
