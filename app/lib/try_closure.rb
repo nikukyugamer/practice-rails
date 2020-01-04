@@ -1,20 +1,20 @@
-class TryClosure
-  def this_is_not_closure
-    proc do
-      n = 0
+# class TryClosure
+#   def this_is_not_closure
+#     proc do
+#       n = 0
 
-      n += 1
-    end
-  end
+#       n += 1
+#     end
+#   end
 
-  def this_is_closure
-    n = 0
+#   def this_is_closure
+#     n = 0
 
-    proc do
-      n += 1
-    end
-  end
-end
+#     proc do
+#       n += 1
+#     end
+#   end
+# end
 
 # closure = TryClosure.new.this_is_not_closure
 # closure.call #=> 1
