@@ -18,7 +18,7 @@ jobs:
           POSTGRES_PASSWORD: root
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: 基本パッケージのインストールを行う
       run: |
         apt-get update
@@ -68,7 +68,7 @@ jobs:
     - name: $ bundle install を行う
       run: |
         bundle config set deployment 'true'
-        bundle install --jobs 4 --retry 3 --deployment
+        bundle install --jobs 4 --retry 3
     - name: $ yarn install を行う
       run: |
         yarn install
