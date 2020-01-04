@@ -6,6 +6,8 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ruby:2.7.0
+      env:
+        BUNDLE_PATH: vendor/bundle
     services:
       postgres:
         image: postgres:12.1
@@ -50,19 +52,22 @@ jobs:
         key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
         restore-keys: |
           ${{ runner.os }}-yarn-
-    - name: Bundler の 2 を入れる
+    - name: Bundler の 最新版 を入れる
       run: |
         gem install bundler --no-document
-    - name: Cache RubyGems
+      # run: |
+      #   gem install bundler --no-document -v 1.17.3 || true
+    - name: RubyGems のキャッシュを復元する
       uses: actions/cache@v1
+      id: rubygems-cache
       with:
         path: vendor/bundle
         key: ${{ runner.os }}-gem-${{ hashFiles('**/Gemfile.lock') }}
         restore-keys: |
           ${{ runner.os }}-gem-
-    - name: $ bundle install --jobs 4 --retry 3 --deployment --path vendor/bundle を行う
+    - name: $ bundle install を行う
       run: |
-        bundle config set path 'vendor/bundle'
+        bundle config set deployment 'true'
         bundle install --jobs 4 --retry 3 --deployment
     - name: $ yarn install を行う
       run: |
@@ -87,9 +92,9 @@ jobs:
     #   env:
     #     PGHOST: postgres
     #     RAILS_ENV: test
-    - name: $ bundle exec rails assets:precompile を行う
-      run: |
-        bundle exec rails assets:precompile
+    # - name: $ bundle exec rails assets:precompile を行う
+    #   run: |
+    #     bundle exec rails assets:precompile
     - name: RSpec を実行する
       if: always()
       run: |
