@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_29_082056) do
+ActiveRecord::Schema.define(version: 2020_01_09_013509) do
 
   create_table "article_authors", force: :cascade do |t|
     t.integer "article_id"
@@ -44,9 +44,9 @@ ActiveRecord::Schema.define(version: 2019_12_29_082056) do
     t.string "firstname"
     t.string "lastname"
     t.integer "age"
-    t.integer "sex"
+    t.integer "sex", default: 0, null: false
     t.string "born_at_pref"
-    t.boolean "is_japanese"
+    t.boolean "is_japanese", default: true, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
