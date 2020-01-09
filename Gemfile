@@ -33,6 +33,7 @@ end
 
 group :development do
   gem 'bundler-diff'
+  gem 'faker'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'rubocop-rails'
   gem 'spring'
