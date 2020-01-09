@@ -33,7 +33,6 @@ end
 
 group :development do
   gem 'bundler-diff'
-  gem 'faker'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'rubocop-rails'
   gem 'spring'
@@ -44,6 +43,7 @@ end
 group :test do
   gem 'capybara', '>= 2.15'
   gem 'factory_bot_rails'
+  gem 'faker'
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
