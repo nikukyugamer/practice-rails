@@ -6,8 +6,8 @@ class TryPureAlias
   alias bar foo
 end
 
-p TryPureAlias.new.foo
-p TryPureAlias.new.bar
+TryPureAlias.new.foo
+TryPureAlias.new.bar
 
 class TryPureAliasBySymbol
   def foo
