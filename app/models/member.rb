@@ -4,5 +4,5 @@ class Member < ApplicationRecord
     male: 1,
     female: 2,
     other: 3
-  }
+  }, _prefix: true
 end

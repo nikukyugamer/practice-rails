@@ -26,7 +26,7 @@ RSpec.describe Member, type: :model do
   context 'sex カラムにおいて、異なる値が入ったオブジェクトを複数生成したとき' do
     it 'enum で生やしたメソッドを実行することで、enum の値を変更できること' do
       member = Member.new(sex: 1)
-      member.female!
+      member.sex_female!
       expect(member.sex).to eq 'female'
     end
 
@@ -36,10 +36,10 @@ RSpec.describe Member, type: :model do
       female_sex_member   = FactoryBot.create(:member, sex: :female)
       other_sex_member    = FactoryBot.create(:member, sex: :other)
 
-      expect(Member.female.first).to_not eq unknown_sex_member
-      expect(Member.female.first).to_not eq male_sex_member
-      expect(Member.female.first).to eq female_sex_member
-      expect(Member.female.first).to_not eq other_sex_member
+      expect(Member.sex_female.first).to_not eq unknown_sex_member
+      expect(Member.sex_female.first).to_not eq male_sex_member
+      expect(Member.sex_female.first).to eq female_sex_member
+      expect(Member.sex_female.first).to_not eq other_sex_member
     end
   end
 
