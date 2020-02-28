@@ -39,11 +39,11 @@ Style/FrozenStringLiteralComment:
 Style/RescueModifier:
   Enabled: false
 
-Metrics/LineLength:
-  Enabled: false
+# Metrics/LineLength:
+#   Enabled: false
 
-Style/BracesAroundHashParameters:
-  Enabled: false
+# Style/BracesAroundHashParameters:
+#   Enabled: false
 
 Style/GuardClause:
   Enabled: false
