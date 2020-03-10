@@ -109,10 +109,10 @@ jobs:
       # env:
       #   PGHOST: postgres
       #   RAILS_ENV: test
-    - name: RuboCop を実行する
-      if: always()
-      run: |
-        bundle exec rubocop
+    # - name: RuboCop を実行する
+    #   if: always()
+    #   run: |
+    #     bundle exec rubocop -D -E -S -P
     # - name: ESLint を実行する
     #   if: always()
     #   run: |
