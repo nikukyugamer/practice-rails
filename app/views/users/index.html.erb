@@ -10,10 +10,6 @@
 <% end %>
 
 <% @users.each do |user| %>
-  <%= user.foobar_attacher&.data&.dig('metadata', 'filename') %><br>
-  <%= user.foobar_attacher&.data&.dig('metadata', 'size') %><br>
-  <%= user.foobar_attacher&.data&.dig('metadata', 'mime_type') %><br>
-  <br>
-  <%= link_to 'ファイルのダウンロード', user.foobar_attacher&.url %><br>
+  <%= user.attributes %>
   <br>
 <% end %>
