@@ -1,21 +1,21 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.0'
+ruby '2.7.1'
 
 gem 'aws-sdk-s3'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'image_processing', '~> 1.2'
 gem 'jbuilder', '~> 2.7'
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 4.3'
 gem 'pundit'
-gem 'rails', '~> 6.0.0.rc2'
-gem 'sass-rails', '~> 5'
+gem 'rails', '~> 6.0.3'
+gem 'sass-rails', '~> 6'
 gem 'shrine', '~> 3.0'
 gem 'sorcery'
 gem 'sqlite3', '~> 1.4'
 gem 'turbolinks', '~> 5'
-gem 'webpacker', '~> 4.0'
+gem 'webpacker', '~> 5.1'
 gem 'wicked_pdf'
 
 group :development, :test do
@@ -33,7 +33,7 @@ end
 
 group :development do
   gem 'bundler-diff'
-  gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'listen', '>= 3.0.5', '< 3.3'
   gem 'rubocop-rails'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
