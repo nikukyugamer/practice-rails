@@ -12,9 +12,9 @@ class NotifyToSlack
       payload = {
         "attachments": [
           {
-            "fallback": "fallback!",
-            "pretext": "pretext!",
-            "color": "#add8e6",
+            "fallback": 'fallback!',
+            "pretext": 'pretext!',
+            "color": '#add8e6',
             "fields": [
               {
                 "value": notification_message
