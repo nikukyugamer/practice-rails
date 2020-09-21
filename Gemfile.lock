@@ -183,7 +183,7 @@ GEM
     pry-rails (0.3.9)
       pry (>= 0.10.4)
     public_suffix (4.0.6)
-    puma (4.3.6)
+    puma (5.0.0)
       nio4r (~> 2.0)
     pundit (2.1.0)
       activesupport (>= 3.0.0)
@@ -352,11 +352,11 @@ DEPENDENCIES
   factory_bot_rails
   faker
   image_processing (~> 1.2)
-  jbuilder (~> 2.7)
+  jbuilder (~> 2.10)
   listen (>= 3.0.5, < 3.3)
   pry-byebug
   pry-rails
-  puma (~> 4.3)
+  puma (~> 5.0)
   pundit
   rails (~> 6.0.3)
   rspec-rails
@@ -364,7 +364,7 @@ DEPENDENCIES
   rubocop-rails
   sass-rails (~> 6)
   selenium-webdriver
-  shrine (~> 3.0)
+  shrine (~> 3.2)
   simplecov
   sorcery
   spring
@@ -374,7 +374,7 @@ DEPENDENCIES
   turbolinks (~> 5)
   web-console (>= 3.3.0)
   webdrivers
-  webpacker (~> 5.1)
+  webpacker (~> 5.2)
   wicked_pdf
 
 RUBY VERSION
