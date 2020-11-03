@@ -15,6 +15,9 @@
   <body>
     <section class="section">
       <div class="container">
+        <% if flash.notice.present?%>
+          <%= flash.notice %>
+        <% end %>
         <%= yield %>
       </div>
     </section>

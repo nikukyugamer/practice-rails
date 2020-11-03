@@ -1,21 +1,21 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.1'
+ruby '2.7.2'
 
 gem 'aws-sdk-s3'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'image_processing', '~> 1.2'
-gem 'jbuilder', '~> 2.7'
-gem 'puma', '~> 4.3'
+gem 'jbuilder', '~> 2.10'
+gem 'puma', '~> 5.0'
 gem 'pundit'
 gem 'rails', '~> 6.0.3'
 gem 'sass-rails', '~> 6'
-gem 'shrine', '~> 3.0'
+gem 'shrine', '~> 3.3'
 gem 'sorcery'
 gem 'sqlite3', '~> 1.4'
 gem 'turbolinks', '~> 5'
-gem 'webpacker', '~> 5.1'
+gem 'webpacker', '~> 5.2'
 gem 'wicked_pdf'
 
 group :development, :test do
@@ -25,8 +25,8 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'pry-byebug'
   gem 'pry-rails'
-  gem 'rspec-rails'
   gem 'rspec_junit_formatter'
+  gem 'rspec-rails'
   gem 'simplecov'
   gem 'spring-commands-rspec'
 end
