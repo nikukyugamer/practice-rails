@@ -4,7 +4,7 @@ class TryDebugByTap
 
     # rubocop:disable Rails/Output
     arr.sort.tap { |sorted_array| pp sorted_array }
-    # rubocop:enabled Rails/Output
+    # rubocop:enable Rails/Output
   end
 end
 
