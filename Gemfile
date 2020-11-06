@@ -5,7 +5,7 @@ ruby '2.7.2'
 
 gem 'aws-sdk-s3'
 gem 'bootsnap', '>= 1.4.2', require: false
-gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.12'
 gem 'jbuilder', '~> 2.10'
 gem 'puma', '~> 5.0'
 gem 'pundit'
