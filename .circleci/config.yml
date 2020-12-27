@@ -6,8 +6,11 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/ruby:2.7.2
-      - image: circleci/postgres:13
+      - image: circleci/ruby:3.0.0-rc1
+      # Error: Database is uninitialized and superuser password is not specified.
+      #  You must specify POSTGRES_PASSWORD to a non-empty value for the
+      #  superuser. For example, "-e POSTGRES_PASSWORD=password" on "docker run".
+      # - image: circleci/postgres:13
     working_directory: ~/repo
     steps:
       - checkout
