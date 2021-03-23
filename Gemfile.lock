@@ -128,7 +128,7 @@ GEM
       multipart-post (>= 1.2, < 3)
       ruby2_keywords
     faraday-net_http (1.0.1)
-    ffi (1.14.2)
+    ffi (1.15.0)
     gems_comparator (0.4.0)
       bundler (>= 1.0)
       octokit (~> 4.0)
@@ -143,7 +143,7 @@ GEM
       activesupport (>= 5.0.0)
     jmespath (1.4.0)
     jwt (2.2.2)
-    listen (3.4.1)
+    listen (3.5.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     loofah (2.9.0)
@@ -362,7 +362,7 @@ DEPENDENCIES
   faker
   image_processing (~> 1.12)
   jbuilder (~> 2.11)
-  listen (>= 3.0.5, < 3.5)
+  listen (>= 3.0.5, < 3.6)
   pry-byebug
   pry-rails
   puma (~> 5.2)
