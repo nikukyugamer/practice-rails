@@ -5,7 +5,7 @@ jobs:
     name: Challenging Rails CI
     runs-on: ubuntu-latest
     container:
-      image: ruby:2.7.0
+      image: ruby:3.0.1
       env:
         BUNDLE_PATH: vendor/bundle
     services:
