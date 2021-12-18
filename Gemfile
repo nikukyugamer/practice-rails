@@ -1,21 +1,22 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.2'
+ruby '3.0.3'
 
 gem 'aws-sdk-s3'
-gem 'bootsnap', '>= 1.4.2', require: false
-gem 'image_processing', '~> 1.2'
-gem 'jbuilder', '~> 2.10'
-gem 'puma', '~> 5.0'
+gem 'bootsnap', require: false
+gem 'image_processing'
+gem 'jbuilder'
+gem 'pg'
+gem 'puma'
 gem 'pundit'
-gem 'rails', '~> 6.0.3'
-gem 'sass-rails', '~> 6'
-gem 'shrine', '~> 3.3'
+gem 'rails'
+gem 'sass-rails'
+gem 'shrine'
 gem 'sorcery'
-gem 'sqlite3', '~> 1.4'
-gem 'turbolinks', '~> 5'
-gem 'webpacker', '~> 5.2'
+gem 'sqlite3'
+gem 'turbolinks'
+gem 'webpacker'
 gem 'wicked_pdf'
 
 group :development, :test do
@@ -33,17 +34,18 @@ end
 
 group :development do
   gem 'bundler-diff'
-  gem 'listen', '>= 3.0.5', '< 3.3'
+  gem 'listen'
   gem 'rubocop-rails'
   gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'web-console', '>= 3.3.0'
+  gem 'spring-watcher-listen'
+  gem 'web-console'
 end
 
 group :test do
-  gem 'capybara', '>= 2.15'
+  gem 'capybara'
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
+
