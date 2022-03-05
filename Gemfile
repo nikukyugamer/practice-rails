@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.1.0'
+ruby '3.1.1'
 
 gem 'aws-sdk-s3'
 gem 'bootsnap', require: false
@@ -48,4 +48,3 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
-
