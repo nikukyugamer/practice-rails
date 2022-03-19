@@ -7,10 +7,6 @@ jobs:
   build:
     docker:
       - image: cimg/ruby:3.1
-      # Error: Database is uninitialized and superuser password is not specified.
-      #  You must specify POSTGRES_PASSWORD to a non-empty value for the
-      #  superuser. For example, "-e POSTGRES_PASSWORD=password" on "docker run".
-      # - image: circleci/postgres:13
     working_directory: ~/repo
     steps:
       - checkout
@@ -41,8 +37,8 @@ jobs:
           paths:
             - ./vendor/bundle
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
-      # - run: bundle exec rake db:create
-      # - run: bundle exec rake db:schema:load
+      - run: bundle exec rake db:create
+      - run: bundle exec rake db:schema:load
       # run tests!
       # RuboCop: bundle exec rubocop -D -E -S -P
       # FIXME: Error on Ruby 3.0.0
