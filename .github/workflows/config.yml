@@ -5,7 +5,7 @@ jobs:
     name: Challenging Rails CI
     runs-on: ubuntu-latest
     container:
-      image: ruby:3.0.3
+      image: ruby:3.1
       env:
         BUNDLE_PATH: vendor/bundle
     services:
@@ -18,7 +18,7 @@ jobs:
           POSTGRES_PASSWORD: root
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: 基本パッケージのインストールを行う
       run: |
         apt-get update
@@ -51,7 +51,7 @@ jobs:
       id: yarn-cache
       run: echo "::set-output name=dir::$(yarn cache dir)"
     - name: Yarn のキャッシュファイルを取得する
-      uses: actions/cache@v2
+      uses: actions/cache@v3
       with:
         path: ${{ steps.yarn-cache.outputs.dir }}
         key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
@@ -63,7 +63,7 @@ jobs:
       # run: |
       #   gem install bundler --no-document -v 1.17.3 || true
     - name: RubyGems のキャッシュを復元する
-      uses: actions/cache@v2
+      uses: actions/cache@v3
       id: rubygems-cache
       with:
         path: vendor/bundle

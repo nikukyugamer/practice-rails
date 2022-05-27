@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.0.3'
+ruby '3.1.2'
 
 gem 'aws-sdk-s3'
 gem 'bootsnap', require: false
@@ -37,7 +37,6 @@ group :development do
   gem 'listen'
   gem 'rubocop-rails'
   gem 'spring'
-  gem 'spring-watcher-listen'
   gem 'web-console'
 end
 
@@ -48,4 +47,3 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
-

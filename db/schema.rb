@@ -10,13 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_09_025242) do
-
+ActiveRecord::Schema[7.0].define(version: 2020_01_09_025242) do
   create_table "article_authors", force: :cascade do |t|
-    t.bigint "article_id"
-    t.bigint "author_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.integer "article_id"
+    t.integer "author_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["article_id", "author_id"], name: "index_article_authors_on_article_id_and_author_id", unique: true
     t.index ["article_id"], name: "index_article_authors_on_article_id"
     t.index ["author_id"], name: "index_article_authors_on_author_id"
@@ -26,9 +25,9 @@ ActiveRecord::Schema.define(version: 2020_01_09_025242) do
     t.string "title", null: false
     t.string "sub_title"
     t.string "genre", default: "UNKNOWN", null: false
-    t.datetime "published_at", default: "1970-01-01 03:00:00", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "published_at", precision: nil, default: "1970-01-01 03:00:00", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "authors", force: :cascade do |t|
@@ -36,8 +35,8 @@ ActiveRecord::Schema.define(version: 2020_01_09_025242) do
     t.string "last_name", default: "UNKNOWN", null: false
     t.string "job", default: "UNKNOWN", null: false
     t.string "country", default: "UNKNOWN", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "members", force: :cascade do |t|
@@ -47,16 +46,16 @@ ActiveRecord::Schema.define(version: 2020_01_09_025242) do
     t.integer "sex", default: 0, null: false
     t.string "born_at_pref", default: "UNKNOWN", null: false
     t.boolean "is_japanese", default: true, null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "punditers", force: :cascade do |t|
     t.string "name"
     t.string "place"
     t.integer "price"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -66,8 +65,8 @@ ActiveRecord::Schema.define(version: 2020_01_09_025242) do
     t.float "height"
     t.float "weight"
     t.text "foobar_data"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "article_authors", "articles"
