@@ -37,7 +37,6 @@ group :development do
   gem 'listen'
   gem 'rubocop-rails'
   gem 'spring'
-  gem 'spring-watcher-listen'
   gem 'web-console'
 end
 
