@@ -11,7 +11,6 @@ gem 'pg'
 gem 'puma'
 gem 'rails'
 gem 'sprockets-rails'
-gem 'sqlite3'
 gem 'stimulus-rails'
 gem 'turbo-rails'
 
