@@ -3,12 +3,11 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.2'
 
-# gem 'pg'
-
 gem 'bootsnap', require: false
 gem 'dotenv-rails'
 gem 'importmap-rails'
 gem 'jbuilder'
+gem 'pg'
 gem 'puma'
 gem 'rails'
 gem 'sprockets-rails'
