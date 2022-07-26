@@ -1,40 +1,24 @@
-.env
-
 vendor/
 /.bundle
 
 /db/*.sqlite3
-/db/*.sqlite3-journal
+/db/*.sqlite3-*
 
 /log/*
 /tmp/*
 !/log/.keep
 !/tmp/.keep
 
+/tmp/pids/*
+!/tmp/pids/
+!/tmp/pids/.keep
+
 /storage/*
 !/storage/.keep
+/tmp/storage/*
+!/tmp/storage/
+!/tmp/storage/.keep
 
 /public/assets
-.byebug_history
 
 /config/master.key
-
-/public/packs
-/public/packs-test
-/public/uploads
-node_modules
-yarn-error.log
-yarn-debug.log*
-.yarn-integrity
-
-.vscode
-.history/
-
-/public/packs
-/public/packs-test
-/node_modules
-/yarn-error.log
-yarn-debug.log*
-.yarn-integrity
-
-google_search_typescript.png

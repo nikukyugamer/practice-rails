@@ -1,7 +1,3 @@
-# Ruby CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-ruby/ for more details
-#
 version: 2
 jobs:
   build:
@@ -16,19 +12,27 @@ jobs:
             - v1-dependencies-{{ checksum "Gemfile.lock" }}
             - v1-dependencies-
       - run:
-          name: Install Node.js
+          name: Node.js をインストールする
           # https://github.com/nodesource/distributions/blob/master/README.md#debmanual
           command: |
             curl -fsSL https://deb.nodesource.com/setup_current.x | sudo -E bash -
             sudo apt install -y nodejs
+            echo 'Node.js のバージョンは、'
+            node -v
+            echo 'Node.js がインストールされている場所は、'
+            which node
       - run:
-          name: Install Yarn
+          name: Yarn をインストールする
           command: |
             curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
             echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
             sudo apt update -y && sudo apt install yarn -y
+            echo 'Yarn のバージョンは、'
+            yarn -v
+            echo 'Yarn がインストールされている場所は、'
+            which yarn
       - run:
-          name: Bundle install
+          name: $ bundle install を行う
           command: |
             bundle config set path 'vendor/bundle'
             bundle install --jobs=4 --retry=3
@@ -37,24 +41,14 @@ jobs:
           paths:
             - ./vendor/bundle
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
-      - run: bundle exec rake db:create
-      - run: bundle exec rake db:schema:load
-      # run tests!
-      # RuboCop: bundle exec rubocop -D -E -S -P
-      # FIXME: Error on Ruby 3.0.0
-      # - run:
-      #     name: run tests
-      #     command: |
-      #       mkdir /tmp/test-results
-      #       TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | \
-      #         circleci tests split --split-by=timings)"
-
-      #       bundle exec rspec \
-      #         --format progress \
-      #         --format RspecJunitFormatter \
-      #         --out /tmp/test-results/rspec.xml \
-      #         --format progress \
-      #         $TEST_FILES
+      - run:
+          name: データベースのセットアップ
+          command: |
+            bin/rails db:prepare
+      - run:
+          name: RSpec を実行する
+          command: |
+            bundle exec rspec
       - store_test_results:
           path: /tmp/test-results
       - store_artifacts:

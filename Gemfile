@@ -3,47 +3,28 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.2'
 
-gem 'aws-sdk-s3'
+# gem 'pg'
+
 gem 'bootsnap', require: false
-gem 'image_processing'
+gem 'dotenv-rails'
+gem 'importmap-rails'
 gem 'jbuilder'
-gem 'pg'
 gem 'puma'
-gem 'pundit'
 gem 'rails'
-gem 'sass-rails'
-gem 'shrine'
-gem 'sorcery'
+gem 'sprockets-rails'
 gem 'sqlite3'
-gem 'turbolinks'
-gem 'webpacker'
-gem 'wicked_pdf'
+gem 'stimulus-rails'
+gem 'turbo-rails'
 
 group :development, :test do
-  gem 'binding_of_caller'
-  gem 'byebug'
-  gem 'codecov', require: false
-  gem 'dotenv-rails'
-  gem 'pry-byebug'
-  gem 'pry-rails'
-  gem 'rspec_junit_formatter'
-  gem 'rspec-rails'
-  gem 'simplecov'
-  gem 'spring-commands-rspec'
+  gem 'rspec-rails', require: false
+  gem 'rubocop-rails', require: false
 end
 
 group :development do
-  gem 'bundler-diff'
-  gem 'listen'
-  gem 'rubocop-rails'
-  gem 'spring'
   gem 'web-console'
 end
 
 group :test do
-  gem 'capybara'
   gem 'factory_bot_rails'
-  gem 'faker'
-  gem 'selenium-webdriver'
-  gem 'webdrivers'
 end
