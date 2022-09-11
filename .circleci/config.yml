@@ -74,8 +74,9 @@ jobs:
           name: RSpec を実行する
           command: |
             bundle exec rspec
-      - store_test_results:
-          path: /tmp/test-results
       - store_artifacts:
-          path: /tmp/test-results
-          destination: test-results
+          path: ~/project/tmp/screenshots
+          destination: screenshots
+      - store_artifacts:
+          path: ~/project/tmp/capybara
+          destination: capybara
