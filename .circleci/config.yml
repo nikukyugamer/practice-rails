@@ -33,6 +33,10 @@ jobs:
             which chromedriver
             chromedriver --version
       - run:
+          name: 必要なパッケージをインストールする
+          command: |
+            sudo apt install fonts-migmix
+      - run:
           name: Node.js をインストールする
           # https://github.com/nodesource/distributions/blob/master/README.md#debmanual
           command: |
