@@ -28,6 +28,8 @@ RSpec.describe '静的ページ', type: :system do
 
     expect(page.current_url).to eq 'http://localhost:4000/404.html'
     expect(page).to have_content 'You may have mistyped the address or the page may have moved.'
+
+    save_screenshot
   end
 
   it '422.html へアクセスすると期待通りのレスポンスが返ってくること' do
@@ -35,6 +37,8 @@ RSpec.describe '静的ページ', type: :system do
 
     expect(page.current_url).to eq 'http://localhost:4000/422.html'
     expect(page).to have_content "Maybe you tried to change something you didn't have access to."
+
+    save_screenshot
   end
 
   it '500.html へアクセスすると期待通りのレスポンスが返ってくること' do
@@ -42,5 +46,7 @@ RSpec.describe '静的ページ', type: :system do
 
     expect(page.current_url).to eq 'http://localhost:4000/500.html'
     expect(page).to have_content 'If you are the application owner check the logs for more information.'
+
+    save_screenshot
   end
 end
