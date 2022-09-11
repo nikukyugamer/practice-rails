@@ -1,8 +1,12 @@
-version: 2
+version: 2.1
+
+orbs:
+  browser-tools: circleci/browser-tools@1.4.0
+
 jobs:
   build:
     docker:
-      - image: cimg/ruby:3.1
+      - image: cimg/ruby:3.1.2
       - image: cimg/postgres:14.4
         auth:
           username: $DOCKERHUB_USERNAME
@@ -12,12 +16,22 @@ jobs:
           POSTGRES_DB: postgres
     working_directory: ~/repo
     steps:
+      - browser-tools/install-chrome
+      - browser-tools/install-chromedriver
       - checkout
       - restore_cache:
           name: Restore RubyGems Cache
           keys:
             - v1-dependencies-{{ checksum "Gemfile.lock" }}
             - v1-dependencies-
+      - run:
+          name: '"browser-tools" によるインストールのチェック'
+          command: |
+            which google-chrome
+            google-chrome --version
+
+            which chromedriver
+            chromedriver --version
       - run:
           name: Node.js をインストールする
           # https://github.com/nodesource/distributions/blob/master/README.md#debmanual
