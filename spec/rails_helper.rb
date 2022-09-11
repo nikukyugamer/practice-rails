@@ -20,7 +20,7 @@ RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
 
   config.before(:each, type: :system) do |example|
-    # GitHub Actions 用
+    # CI用
     driven_by :selenium, screen_size: [1400, 1400], using: :headless_chrome do |options|
       options.add_argument('--disable-dev-sim-usage')
       options.add_argument('--no-sandbox')

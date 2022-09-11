@@ -32,11 +32,6 @@ jobs:
 
             which chromedriver
             chromedriver --version
-      # - run:
-      #     name: chromedriverをバックグラウンドで起動する
-      #     command: |
-      #       chromedriver
-      #     background: true
       - run:
           name: Node.js をインストールする
           # https://github.com/nodesource/distributions/blob/master/README.md#debmanual
