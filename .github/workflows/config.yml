@@ -63,3 +63,13 @@ jobs:
     - name: RSpec を実行する
       run: |
         bundle exec rspec
+    - name: tmp/screenshots のアーティファクトをアップロードする
+      uses: actions/upload-artifact@v3
+      with:
+        name: screenshots
+        path: tmp/screenshots
+    - name: tmp/capybara のアーティファクトをアップロードする
+      uses: actions/upload-artifact@v3
+      with:
+        name: capybara
+        path: tmp/capybara
