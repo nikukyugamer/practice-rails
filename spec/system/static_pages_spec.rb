@@ -28,6 +28,7 @@ RSpec.describe '静的ページ', type: :system do
 
     expect(page.current_url).to eq 'http://localhost:4000/404.html'
     expect(page).to have_content 'You may have mistyped the address or the page may have moved.'
+    expect(page).to have_content 'ページが見つかりません。'
 
     save_screenshot
   end
@@ -37,6 +38,7 @@ RSpec.describe '静的ページ', type: :system do
 
     expect(page.current_url).to eq 'http://localhost:4000/422.html'
     expect(page).to have_content "Maybe you tried to change something you didn't have access to."
+    expect(page).to have_content '正しく処理できませんでした。'
 
     save_screenshot
   end
@@ -46,6 +48,7 @@ RSpec.describe '静的ページ', type: :system do
 
     expect(page.current_url).to eq 'http://localhost:4000/500.html'
     expect(page).to have_content 'If you are the application owner check the logs for more information.'
+    expect(page).to have_content 'サーバーエラーです。'
 
     save_screenshot
   end
