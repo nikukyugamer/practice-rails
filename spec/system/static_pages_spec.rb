@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'open3'
 
 RSpec.describe '静的ページ', type: :system do
   before :all do
@@ -6,6 +7,14 @@ RSpec.describe '静的ページ', type: :system do
     `#{kill_process_command}` # プロセスが存在しない場合でもここで実行は止まらない
 
     `npx http-server public/ -p 4000 > /tmp/http-server_on_spec.log 2>&1 &`
+    wait_command = <<~COMMAND
+      until : > /dev/tcp/localhost/4000; do
+        echo -n .
+        sleep 1
+      done
+    COMMAND
+    Open3.capture3(wait_command)
+
     sleep 10
   end
 
