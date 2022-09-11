@@ -35,6 +35,9 @@ jobs:
     steps:
     - name: コードをチェックアウトする
       uses: actions/checkout@v3
+    - name: 必要なパッケージをインストールする
+      run: |
+        sudo apt install fonts-migmix
     - name: Ruby のセットアップを行う
       uses: ruby/setup-ruby@v1
       with:
