@@ -6,7 +6,7 @@ RSpec.describe '静的ページ', type: :system do
     `#{kill_process_command}` # プロセスが存在しない場合でもここで実行は止まらない
 
     `npx http-server public/ -p 4000 > /tmp/http-server_on_spec.log 2>&1 &`
-    sleep 5
+    sleep 10
   end
 
   after :all do
