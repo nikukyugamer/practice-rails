@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe '静的ページ', type: :system do
-  before do
+  before :all do
     kill_process_command = %(kill `ps ax | grep "h[t]tp-server public/ -p 4000" | awk '{print $1}'`)
     `#{kill_process_command}` # プロセスが存在しない場合でもここで実行は止まらない
 
@@ -9,7 +9,7 @@ RSpec.describe '静的ページ', type: :system do
     sleep 5
   end
 
-  after do
+  after :all do
     kill_process_command = %(kill `ps ax | grep "h[t]tp-server public/ -p 4000" | awk '{print $1}'`)
     `#{kill_process_command}` # プロセスが存在しない場合でもここで実行は止まらない
   end
