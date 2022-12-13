@@ -47,9 +47,9 @@ jobs:
       uses: actions/cache@v3
       with:
         path: vendor/bundle
-        key: ${{ runner.os }}-gem-${{ hashFiles('**/Gemfile.lock') }}
+        key: v1-${{ runner.os }}-gem-${{ hashFiles('**/Gemfile.lock') }}
         restore-keys: |
-          ${{ runner.os }}-gem-
+          v1-${{ runner.os }}-gem-
     - name: （予定地）Node.js のセットアップを行う
       run: |
         echo 'Node.js を使うことがあれば "actions/setup-node" を用いる'
