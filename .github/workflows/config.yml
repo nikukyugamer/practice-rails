@@ -7,14 +7,10 @@ on:
 jobs:
   ci:
     name: Challenging Rails
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: ["18.x"]
-        ruby-version: ["3.1.2"]
+    runs-on: ubuntu-22.04
     services:
       postgres:
-        image: postgres:14.4
+        image: postgres:16.2
         ports:
           - 5432:5432
         env:
@@ -41,22 +37,11 @@ jobs:
     - name: Ruby のセットアップを行う
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: ${{ matrix.ruby-version }}
+        ruby-version: .ruby-version
         bundler-cache: true
-    - name: $ bundle install を行う
-      uses: actions/cache@v3
-      with:
-        path: vendor/bundle
-        key: v1-${{ runner.os }}-gem-${{ hashFiles('**/Gemfile.lock') }}
-        restore-keys: |
-          v1-${{ runner.os }}-gem-
     - name: （予定地）Node.js のセットアップを行う
       run: |
-        echo 'Node.js を使うことがあれば "actions/setup-node" を用いる'
-        echo 'uses: actions/setup-node@v3'
-        echo 'with:'
-        echo 'node-version: ${{ matrix.node-version }}'
-        echo 'cache: "yarn"'
+        echo '（予定地）Node.js のセットアップを行う'
     - name: データベースをセットアップする
       run: |
         bin/rails db:prepare
