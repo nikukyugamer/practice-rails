@@ -30,7 +30,7 @@ jobs:
       POSTGRES_PASSWORD_TEST: postgres_password
     steps:
     - name: コードをチェックアウトする
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     - name: 必要なパッケージをインストールする
       run: |
         sudo apt install fonts-migmix
